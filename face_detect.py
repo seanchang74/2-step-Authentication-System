@@ -155,5 +155,9 @@ if __name__ == '__main__':
     else:
         print("Stranger Detect!")
         time = image.replace('img/','').replace('.jpg','')
+        # send e-mail
         cmd = "python send_mail.py --image {} --stamp {}".format(image,time)
+        status = subprocess.call(cmd, shell=True)
+        # push line notify
+        cmd = "python line_notify.py --image {}".format(image)
         status = subprocess.call(cmd, shell=True)
