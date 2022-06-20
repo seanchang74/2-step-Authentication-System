@@ -149,10 +149,9 @@ if __name__ == '__main__':
     else:
         print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
 
-    pred = labels[i].replace('0','').strip()
-    if (pred == "No Mask"):
-        print("Authentication Pass")
-    else:
+    pred = labels[i].replace('2','').strip()
+    
+    if (pred == "unknown"):
         print("Stranger Detect!")
         time = image.replace('img/','').replace('.jpg','')
         # send e-mail
@@ -161,3 +160,5 @@ if __name__ == '__main__':
         # push line notify
         cmd = "python line_notify.py --image {}".format(image)
         status = subprocess.call(cmd, shell=True)
+    else:
+        print("Authentication Pass")

@@ -61,13 +61,13 @@ def main():
                                 lcd.write_string("Detect Stranger!")
                                 GPIO.output(green_led, 0)
                                 GPIO.output(red_led, 1)
-                                playsound("sound/alarm.mp3")
+                                playsound("sound/error.mp3")
                             else:
                                 lcd.clear()
-                                lcd.cursor_pos = (0, 0)
+                                lcd.cursor_pos = (0, 6)
                                 #can be replaced by label name
-                                lcd.write_string("Hello Sean")
-                                lcd.cursor_pos = (1, 0)
+                                lcd.write_string("Hello")
+                                lcd.cursor_pos = (1, 2)
                                 lcd.write_string("Welcome Home!")
                                 GPIO.output(red_led, 0)
                                 GPIO.output(green_led, 1)

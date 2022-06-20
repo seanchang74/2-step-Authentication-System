@@ -1,2 +1,3 @@
-0 No Mask
-1 With Mask
+0 Ethan
+1 Sean
+2 unknown
